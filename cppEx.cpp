@@ -1,21 +1,21 @@
 ﻿#include <iostream>
+#include <string>
+#include <sstream>
+#include<vector>
 
-class simpleRational {
-	int denominator = 0;
-	int nominator = 1;
-	double result = 0;
+int main(){
+	std::string line;
+	int token;
+	std::vector<int> v{};
 
-public:
-	simpleRational(int denom = 0, int nom = 1) { result = denom / nom; }
+	std::getline(std::cin, line);
+	std::istringstream iss{ line };
 
-	void Print() const {
-		std::cout << result;
+	while (iss >> token) {
+		v.push_back(token);
 	}
-};
-
-int main()
-{
-	simpleRational r1(100, 25);
-	r1.Print();
+	for (int k = 0; k < v.size(); k++) {
+		std::cout << v[k] << ' ';
+	}
 }
 
